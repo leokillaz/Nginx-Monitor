@@ -1,0 +1,6 @@
+Nome de usuário: leokillaz
+Horário atual: 12:37
+Data: 10/10/2024
+Nginx: Ativado (rodando)
+A tela é atualizada a cada 5 minutos, indicando se o Nginx está ativo.
+Desenvolvido por Leonardo Pereira

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Status do Nginx</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .status {
+            color: green;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 12px;
+            color: #555;
+        }
+        #clock {
+            font-size: 28px;
+            margin: 10px 0;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = String(now.getHours()).padStart(2, '0');
+            var minutes = String(now.getMinutes()).padStart(2, '0');
+            var seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = hours + ':' + minutes + ':' + seconds;
+        }
+
+        function updateDate() {
+            var now = new Date();
+            var options = { day: 'numeric', month: 'long', year: 'numeric', weekday: 'long', timeZone: 'America/Sao_Paulo' };
+            document.getElementById('date').textContent = now.toLocaleDateString('pt-BR', options);
+        }
+
+        setInterval(updateClock, 1000);
+    </script>
+</head>
+<body onload="updateClock(); updateDate();">
+    <h1>Boa tarde, LEOKILLAS!</h1>
+    <div id="clock"></div>
+    <div>Horário em Brasília (UTC-3)</div>
+    <div id="date"></div>
+    <div style="color: black;">Nginx: <span class="status">ONLINE</span></div>
+    <div>A tela é atualizada a cada 5 minutos, indicando se o Nginx está ativo.</div>
+    <div class="footer">Desenvolvido por Leonardo Pereira</div>
+</body>
+</html>
+
